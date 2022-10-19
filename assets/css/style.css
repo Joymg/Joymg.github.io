@@ -329,6 +329,13 @@ h6 {
   #pageContainer {
     margin: -2em;
   }
+  #header .photo{
+    display: none;
+  }
+  .thought{
+    width: 100px !important;
+    height: 150px !important;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -857,9 +864,9 @@ section {
 
 .resume .cv-container{
   display: grid;
-  grid-template-columns: auto auto;
-  width: 420px;
-  height: 10vh;
+  grid-template-columns: 8em auto;
+  gap: 1vw;
+  width: auto;
 }
 
 .resume .cv-container:hover .pulse-circle{
@@ -869,7 +876,6 @@ section {
 .resume .pulse-circle{
   height: 64px !important;
   width: 64px;
-  margin-right: 3vw;
   display: flex;
   justify-items: center;
   align-items: center;
