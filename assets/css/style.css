@@ -329,12 +329,24 @@ h6 {
   #pageContainer {
     margin: -2em;
   }
+
   #header .photo{
     display: none;
+  }
+
+  #header .center-typing{
+    height: 60px;
+  }
+
+  #header .navbar ul li a{
+    padding: .8em;
   }
   .thought{
     width: 100px !important;
     height: 150px !important;
+  }
+  #blackLabel{
+    height: 1em !important;
   }
 }
 
