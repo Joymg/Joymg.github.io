@@ -255,10 +255,6 @@ var isAtTop = window.scrollY == 0;
     });
   });
 
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
 })();
 
 (function () {
@@ -269,7 +265,7 @@ var isAtTop = window.scrollY == 0;
       '<span class="line-number"></span>' +
       pre[i].innerHTML +
       '<span class="cl"></span>';
-    for (var j = 0; j < 157; j++) {
+    for (var j = 0; j < 158; j++) {
       var line_num = pre[i].getElementsByTagName("span")[0];
       line_num.innerHTML += "<span>" + (j + 1) + "</span>";
     }
