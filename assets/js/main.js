@@ -1,4 +1,3 @@
-
 var isAtTop = window.scrollY == 0;
 (function () {
   "use strict";
@@ -62,7 +61,7 @@ var isAtTop = window.scrollY == 0;
   /**
    * Scrolls to an element with header offset
    */
-   const scrollto = (el) => {
+  const scrollto = (el) => {
     let elementPos = select(el).offsetTop;
     window.scrollTo({
       top: elementPos,
@@ -196,7 +195,6 @@ var isAtTop = window.scrollY == 0;
     }
   });
 
- 
   /**
    * Portfolio details slider
    */
@@ -255,21 +253,39 @@ var isAtTop = window.scrollY == 0;
     });
   });
 
+  window.addEventListener("resize", () => {
+    var pre = document.getElementsByTagName("pre"),
+      pl = pre.length,
+      main = document.getElementById("main");
+    pre[0].innerHTML = "";
+    var lines = Math.floor(main.clientHeight / 22);
+    for (var i = 0; i < pl; i++) {
+      pre[i].innerHTML =
+        '<span class="line-number"></span>' +
+        pre[i].innerHTML +
+        '<span class="cl"></span>';
+      for (var j = 0; j < lines; j++) {
+        var line_num = pre[i].getElementsByTagName("span")[0];
+        line_num.innerHTML += "<span>" + (j + 1) + "</span>";
+      }
+    }
+  });
 })();
 
 (function () {
   var pre = document.getElementsByTagName("pre"),
-    pl = pre.length;
+    pl = pre.length,
+    main = document.getElementById("main");
+  pre[0].innerHTML = "";
+  var lines = Math.floor(main.clientHeight / 22);
   for (var i = 0; i < pl; i++) {
     pre[i].innerHTML =
       '<span class="line-number"></span>' +
       pre[i].innerHTML +
       '<span class="cl"></span>';
-    for (var j = 0; j < 158; j++) {
+    for (var j = 0; j < lines; j++) {
       var line_num = pre[i].getElementsByTagName("span")[0];
       line_num.innerHTML += "<span>" + (j + 1) + "</span>";
     }
   }
 })();
-
-

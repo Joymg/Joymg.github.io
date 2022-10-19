@@ -64,6 +64,8 @@ h6 {
   background: #007acc;
   width: 100%;
   height: 0.5em;
+  
+  z-index: 99;
 }
 
 .pageContainer {
@@ -298,21 +300,21 @@ h6 {
 {
 	border-radius: 10px;
 	background-color: #333333;
-  min-height: 450px;
+  min-height: 250px;
 }
 
 ::-webkit-scrollbar
 {
 	width: 12px;
 	background-color: #333333;
-  min-height: 450px;
+  min-height: 250px;
 }
 
 ::-webkit-scrollbar-thumb
 {
 	border-radius: 10px;
 	background-color: #007acc;
-  min-height: 450px;
+  min-height: 250px;
 }
 
 @media (max-width: 1199px) {
@@ -325,7 +327,7 @@ h6 {
   }
 
   #pageContainer {
-    margin: 0;
+    margin: -2em;
   }
 }
 
@@ -569,7 +571,7 @@ pre .line-number span {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 6vh 0;
   overflow: hidden;
 }
 
@@ -621,7 +623,7 @@ section {
   margin-bottom: 0;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container,
   .container-sm {
     max-width: 540px;
@@ -682,7 +684,7 @@ section {
   .container-xxl {
     max-width: 1450px;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # About
@@ -795,6 +797,13 @@ section {
   grid-template-columns: auto auto auto !important
 }
 
+
+
+@media (max-width: 700px) {
+  .languages ul {
+    display: inline-block !important;
+  }
+}
 /* .skills .progress {
   height: 60px;
   display: block;
@@ -850,7 +859,7 @@ section {
   display: grid;
   grid-template-columns: auto auto;
   width: 420px;
-  height: 8vh;
+  height: 10vh;
 }
 
 .resume .cv-container:hover .pulse-circle{
@@ -858,24 +867,17 @@ section {
 }
 
 .resume .pulse-circle{
-  position: relative;
   height: 64px !important;
   width: 64px;
-  margin-right: 5vw;
+  margin-right: 3vw;
+  display: flex;
+  justify-items: center;
+  align-items: center;
   
 }
-.resume .section-title .parent{
+.resume .section-title a{
   font-size: 48px;
-  position: relative;
-  top: 2.5vh;
-  
 }
-.resume .section-title .child{
-  font-size: 24px;
-  position: relative;
-  top: -5.5vh;
-}
-
 
 .thought {
   width: 300px;
