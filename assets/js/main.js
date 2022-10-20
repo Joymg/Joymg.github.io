@@ -44,6 +44,7 @@ var isAtTop = window.scrollY == 0;
     navbarlinks.forEach((navbarlink) => {
       if (!navbarlink.hash) return;
       let section = select(navbarlink.hash);
+      UpdateLineNumbers();
       if (!section) return;
       if (
         position >= section.offsetTop &&
@@ -253,22 +254,27 @@ var isAtTop = window.scrollY == 0;
     });
   });
 
-  window.addEventListener("resize", () => {
-    var pre = document.getElementsByTagName("pre"),
-      pl = pre.length,
-      main = document.getElementById("main");
-    pre[0].innerHTML = "";
-    var lines = Math.floor(main.clientHeight / 22);
-    for (var i = 0; i < pl; i++) {
-      pre[i].innerHTML =
-        '<span class="line-number"></span>' +
-        pre[i].innerHTML +
-        '<span class="cl"></span>';
-      for (var j = 0; j < lines; j++) {
-        var line_num = pre[i].getElementsByTagName("span")[0];
-        line_num.innerHTML += "<span>" + (j + 1) + "</span>";
-      }
+
+function UpdateLineNumbers() {
+  var pre = document.getElementsByTagName("pre"),
+    pl = pre.length,
+    main = document.getElementById("main");
+  pre[0].innerHTML = "";
+  var lines = Math.floor(main.clientHeight / 22);
+  for (var i = 0; i < pl; i++) {
+    pre[i].innerHTML =
+      '<span class="line-number"></span>' +
+      pre[i].innerHTML +
+      '<span class="cl"></span>';
+    for (var j = 0; j < lines; j++) {
+      var line_num = pre[i].getElementsByTagName("span")[0];
+      line_num.innerHTML += "<span>" + (j + 1) + "</span>";
     }
+  }
+}
+
+  window.addEventListener("resize", () => {
+    UpdateLineNumbers();
   });
 })();
 

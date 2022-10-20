@@ -335,11 +335,11 @@ h6 {
   }
 
   #header .center-typing{
-    height: 60px;
+    height: 60px !important;
   }
 
   #header .navbar ul li a{
-    padding: .8em;
+    padding: .8em !important;
   }
   .thought{
     width: 100px !important;
