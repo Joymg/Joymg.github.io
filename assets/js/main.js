@@ -44,7 +44,6 @@ var isAtTop = window.scrollY == 0;
     navbarlinks.forEach((navbarlink) => {
       if (!navbarlink.hash) return;
       let section = select(navbarlink.hash);
-      UpdateLineNumbers();
       if (!section) return;
       if (
         position >= section.offsetTop &&
